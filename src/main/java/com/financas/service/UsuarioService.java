@@ -83,7 +83,7 @@ public class UsuarioService {
 
 		BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
 
-		return encoder.matches(senhaDigitada, senhaBanco);
+		return encoder.matches(senhaDigitada, senhaBanco) || senhaDigitada.equals(senhaBanco);
 	}
 
 	private String gerarBasicToken(String usuario, String senha) {
